@@ -15,7 +15,7 @@ https://hub.docker.com/r/livekit/gstreamer/tags
   ```sh
     docker run --rm -it --entrypoint bash livekit/gstreamer:1.26.7-prod-rs 
   ```
-- Ejecutar imagen docker lista para usar la red host:
+- Ejecutar bash sobre el contenedor docker con la red host:
   ```sh
     docker run --network=host --rm -it --entrypoint bash livekit/gstreamer:1.26.7-prod-rs
   ```
