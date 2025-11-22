@@ -22,6 +22,9 @@ https://hub.docker.com/r/livekit/gstreamer/tags
 
 ### WebRTC
 
+Se usará WHIP para la señalización de WebRTC.
+Para consumir el stream WebRTC (que en la versión final vendrá del navegador) se usará Gstreamer para después hacerle al video una pipe para generar el stream rtp multicast
+
 - Recibir un stream webrtc y reproducirlo en ventana:
   ```sh
     gst-launch-1.0 whipserversrc signaller::host-addr=http://127.0.0.1:8190 ! videoconvert ! autovideosink
