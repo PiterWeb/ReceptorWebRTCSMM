@@ -34,6 +34,11 @@ Para consumir el stream WebRTC (que en la versión final vendrá del navegador) 
     gst-launch-1.0 videotestsrc ! videoconvert ! video/x-raw ! queue ! whipclientsink name=ws signaller::whip-endpoint="http://127.0.0.1:8190/whip/endpoint"
   ```
 
+- Comando final que implementa receptor stream webrtc y emisión de stream RTP multicast:
+  ```sh
+    gst-launch-1.0 whipserversrc signaller::host-addr=http://127.0.0.1:8190/ ! videoconvert ! x264enc bitrate=800 ! rtph264pay config-interval=1 pt=96 ! udpsink host=239.255.0.1 port=5000
+  ```
+
 #### Comandos pruebas Gstreamer
 
 ```sh
